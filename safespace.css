@@ -5,7 +5,7 @@ html, body {
   padding:10px 30px 30px 10px;
   background-color:#C67E76;
   color:#4F545A;
-  width:310px;
+  width:270px;
 }
 
 h1 {
@@ -60,7 +60,7 @@ div {
   outline-style: none;
   outline-width: 0px;
   padding: 10px 30px 5px 10px;
-  width: 270px;
+  width: 230px;
   border-radius: 3px;
 }
 

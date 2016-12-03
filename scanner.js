@@ -1,9 +1,10 @@
 
 //var textNode, walk=document.createTreeWalker(document,NodeFilter.SHOW_TEXT,null,false);
 
-var triggers = {"Hack": false};
+var triggers = {"Hack": false, "life":false, "banana":false};
 
 walk(document.body, triggers);
+
 var numfound = 0;
 
 //check if any of the things in the array are true
@@ -13,12 +14,11 @@ for(key in triggers){
     }
 }
 
-
 if(numfound > 0){
-    alert("We found " + numfound + " of your triggers on this site.");
+    //alert("We found " + numfound + " of your triggers on this site.");
 
-    chrome.runtime.sendMessage({"type": "warning", "triggers": triggers }, function(response) {
-           console.log(response.farewell);
+    chrome.runtime.sendMessage({"type": "create_warning", "triggers": triggers, "num":numfound }, function(response) {
+
     });
 
 }
@@ -69,7 +69,7 @@ function handleText(textNode, triggers)
 
  
     for(key in triggers){
-        if(val.includes(key)){
+        if(val.toLowerCase().includes(key.toLowerCase())){
             triggers[key] = true;
         }
     }

@@ -11,9 +11,9 @@
 		"default_title":"SafeSpace"
 	},
       "background": {
-      "scripts": ["warning.js"],
+      "scripts": ["background.js", "warning.js"],
       "persistent": false
-  },
+    },
 	"content_scripts": [ {
 		
 		"js": [ "scanner.js" ],

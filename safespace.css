@@ -1,17 +1,16 @@
 html, body {
   color:black;
-  font-family:arial,helvetica,sans-serif;
-  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+  font-family: Palatino Linotype, Book Antiqua, Palatino, monospace;
   margin:0;
   padding:10px 30px 30px 10px;
-  background-color:#BC8F8F;
+  background-color:#C67E76;
   color:#4F545A;
   width:640px;
 }
 
 h1 {
   color:#655773;
-  font-size: 30px;
+  font-size: 32px;
   font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
 }
 
@@ -33,7 +32,7 @@ div {
 }
 
 #content,#title {
-  background: #FFDAB9;
+  background: #FFE4E1;
   color:#4F545A;
   display: block;
   margin: 0px;

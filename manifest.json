@@ -1,11 +1,11 @@
 {
 	"manifest_version":2,
-	"name":"Safespace",
-	"description":"Notifying and protecting you from keywords and topics that you set and save!",
-	"version": "1.0.1",
+	"name":"SafeSpace",
+	"description":"thingy",
+	"version": "1.0",
 
 	"browser_action":{
-		"default_icon":"icon.jpeg",
+		"default_icon":"icon.png",
 		"default_popup":"popup.html"
 	},
 	"permissions":[

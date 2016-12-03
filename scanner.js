@@ -1,9 +1,21 @@
 
 //var textNode, walk=document.createTreeWalker(document,NodeFilter.SHOW_TEXT,null,false);
 
-var triggers = {"Hack": false, "life":false, "banana":false};
+chrome.runtime.onMessage.addListener(function(request) {
+    if (request.type === 'clear_page') {
+        walk(document.body, request.triggers, cleanText);
+    }
+}
+);
+chrome.runtime.onMessage.addListener(function(request) {
+    if (request.type === 'go_back') {
+        window.history.back();
+    }
+}
+);
+var triggers = {"Hack": false,"banana":false};
 
-walk(document.body, triggers);
+walk(document.body, triggers, searchText);
 
 var numfound = 0;
 
@@ -16,11 +28,9 @@ for(key in triggers){
 
 if(numfound > 0){
     //alert("We found " + numfound + " of your triggers on this site.");
-
     chrome.runtime.sendMessage({"type": "create_warning", "triggers": triggers, "num":numfound }, function(response) {
-
+        walk(document.body, triggers, cleanText);
     });
-
 }
 
 
@@ -37,7 +47,7 @@ chrome.storage.local.get('triggers', function (triggers) {
 */
 
 
-function walk(node, triggers)
+function walk(node, triggers, func)
 {
 	// Source: http://is.gd/mwZp7E
 
@@ -52,21 +62,20 @@ function walk(node, triggers)
 			while ( child )
 			{
 				next = child.nextSibling;
-				walk(child, triggers);
+				walk(child, triggers, func);
 				child = next;
 			}
 			break;
 
 		case 3: // Text node
-			handleText(node, triggers);
+			func(node, triggers);
 			break;
 	}
 }
 
-function handleText(textNode, triggers)
+function searchText(textNode, triggers)
 {
 	var val = textNode.nodeValue;
-
  
     for(key in triggers){
         if(val.toLowerCase().includes(key.toLowerCase())){
@@ -82,4 +91,18 @@ function handleText(textNode, triggers)
  */   
 }
 
+function cleanText(textNode,triggers){
+    var v = textNode.nodeValue;
+
+    for(key in triggers){
+        var regEx = new RegExp(key, "ig");
+        v = v.replace(regEx, "*".repeat(key.length));
+    }
+	textNode.nodeValue = v;
+}
+
+function goback() {
+    // Do something, eg..:
+    window.history.back();
+};
 

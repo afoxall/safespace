@@ -10,3 +10,4 @@ function contentLoaded() {
 }
 
 document.addEventListener('DOMContentLoaded', contentLoaded);
+

@@ -4,12 +4,20 @@
 	"description":"Warning and protecting you from keywords, topics and phrases.",
 	"version": "1.0",
 
+
 	"browser_action":{
 
 		"default_icon":"icon.png",
 		"default_popup":"popup.html",
 		"default_title":"SafeSpace"
 	},
+	"content_scripts": [ {
+		
+		"js": [ "scanner.js" ],
+		"matches": [ "*"],
+		"run_at": "document_start"
+	} ],
+        
 	"permissions":[
 		"activeTab",
 		"storage"

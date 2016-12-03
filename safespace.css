@@ -1,31 +1,45 @@
 html, body {
   color:black;
-  font-family:arial,helvetica,sans-serif;
-  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+  font-family: Palatino Linotype, Book Antiqua, Palatino, monospace;
   margin:0;
   padding:10px 30px 30px 10px;
-  background-color:#BC8F8F;
+  background-color:#C67E76;
   color:#4F545A;
-  width:640px;
+  width:310px;
 }
 
 h1 {
   color:#655773;
-  font-size: 30px;
+  font-size: 32px;
   font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+}
+
+button {
+	background-color:#FFE4E1;
+	border: none;
+	font-family: Palatino Linotype, Book Antiqua, Palatino;
+	color: #655773;
+	padding: 10px 15px;
+	border-top: 1px solid rgba(0, 0, 0, .18);
+	border-right: 1px solid rgba(0, 0, 0, .18);
+	border-left: 2px solid rgba(0, 0, 0, .18);
+	border-radius: 3px;
 }
 
 h2 {
   margin:0;
+  padding: 10px 0px 0px 10px;
 }
 
 p {
   margin:0;
+  padding: 10px 0px 0px 10px;
 }
 
 a {
-  color:#4F545A;
+  color:#655773;
   text-decoration: none;
+  padding: 10px 0px 0px 10px;
 }
 
 div {
@@ -33,7 +47,7 @@ div {
 }
 
 #content,#title {
-  background: #FFDAB9;
+  background: #FFE4E1;
   color:#4F545A;
   display: block;
   margin: 0px;
@@ -41,7 +55,7 @@ div {
   outline-style: none;
   outline-width: 0px;
   padding: 10px 30px 5px 10px;
-  width: 570px;
+  width: 270px;
   border-radius: 3px;
 }
 
@@ -99,7 +113,7 @@ div {
   padding: 0;
   overflow: hidden;
   clear: both;
-  width:408px;
+  width:204px;
 }
 
 #tabs li {
@@ -118,7 +132,7 @@ div {
 }
 
 #tabs li a {
-  color: rgba(255, 255, 255, .69);
+  color: #655773;
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;

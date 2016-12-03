@@ -36,12 +36,12 @@ function removeInput() {
 }
 
 function saveOptions() {
-  var ts = document.getElementById("triggers").getElementsByTagName("*");
-  triggers = [];
+  var ts = document.getElementById("triggers").getElementsByTagName("INPUT");
+  var triggers = [];
   for(child in ts){
-    triggers[child.value()] = false;
+    triggers[child.value] = false;
   }
-  chrome.storage.sync.set("triggers":triggers);
+  chrome.storage.sync.set({"triggers":triggers});
   
 }
 
@@ -61,7 +61,7 @@ function contentLoaded() {
   var save_btn, add_btn;
   save_btn = document.getElementById('save_btn');
   add_btn = document.getElementById('add_btn');
-  remove_btn = document.getElementById('add_btn);
+  remove_btn = document.getElementById('add_btn');
 
   save_btn.addEventListener('click', saveOptions);
   add_btn.addEventListener('click', addInput);

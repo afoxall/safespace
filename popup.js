@@ -55,9 +55,11 @@ function contentLoaded() {
   var save_btn, add_btn;
   save_btn = document.getElementById('save_btn');
   add_btn = document.getElementById('add_btn');
+  remove_btn = document.getElementById('add_btn);
 
   save_btn.addEventListener('click', saveOptions);
   add_btn.addEventListener('click', addInput);
+  remove_btn.addEventListener('click',removeInput);
 }
 
 document.addEventListener('DOMContentLoaded', contentLoaded);

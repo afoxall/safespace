@@ -2,18 +2,6 @@
 <!--
 This is the HTML code for the SafeSpace Google Chrome extension.
  -->
-<html>
-  <head>
-    <!--<title>SafeSpace</title>-->
-
-    <script src="popup.js"></script>
-  </head>
-  <body>
-    <div id="status"></div>
-    <!--<img id="image-result" hidden>
-	-->
-  </body>
-</html>
 
 <html>
   <head>
@@ -22,6 +10,7 @@ This is the HTML code for the SafeSpace Google Chrome extension.
     <link rel="stylesheet" media="screen" href="safespace.css">
     <script src="../data/defaults.js" type="text/javascript"></script>
     <script src="../data/options.js" type="text/javascript"></script>
+	<script src="popup.js"></script>
   </head>
   <body>
     <div id="title">
@@ -38,7 +27,7 @@ This is the HTML code for the SafeSpace Google Chrome extension.
             <h2>Your Black List</h2>
             <p>SafeSpace will check and save you from websites with these words in them:</p><br />
             <a href="#" id="listBlackAdd">add</a><br />
-			<button id="save_btn" type="button" value="Save" /button>
+			<button style="height:50;width:100px" id="save_btn" type="button">Save</button>
           </div>
 		   
         </div>

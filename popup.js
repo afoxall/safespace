@@ -1,7 +1,6 @@
-function displayInputs() {
- var triggerList = ["help", "me", "i'm", "poor"];
- for (i in triggerList) {
-     addTriggers(triggerList[i]);
+function displayInputs(triggerList) {
+ for (key in triggerList) {
+     addTriggers(key);
  }
 }
 
@@ -12,9 +11,7 @@ function addTriggers(text) {
   input.type = "text";
   input.name = text;
   input.value = text;
-  remove = document.createElement("button");
-  remove.type = "remove_btn";
-  remove.id = "remove_btn";
+  remove = document.createElement("remove_bt");
   remove.value = "X";
   wrapper.insertBefore(document.createElement("br"), wrapper.firstChild);
   wrapper.insertBefore(remove, wrapper.firstChild);
@@ -35,6 +32,13 @@ function saveOptions() {
 }
 
 function contentLoaded() {
+  chrome.storage.local.get('triggers', function (triggers) {
+       triggers = result.triggers;
+       alert(result.triggers);
+       $("#triggers").val(triggers);
+       displayInputs(triggers);
+  });
+
   displayInputs();
 
   var save_btn, add_btn;

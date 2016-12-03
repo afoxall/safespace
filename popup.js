@@ -64,7 +64,6 @@ function contentLoaded() {
   add_btn = document.getElementById('add_btn');
   remove_btn = document.getElementById('remove_btn');
 
-
   save_btn.addEventListener('click', saveOptions);
   add_btn.addEventListener('click', addInput);
   remove_btn.addEventListener('click',removeInput);

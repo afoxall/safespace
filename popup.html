@@ -8,7 +8,7 @@ This is the HTML code for the SafeSpace Google Chrome extension.
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Options for SafeSpace</title>
     <link rel="stylesheet" media="screen" href="safespace.css">
-
+	<link rel="stylesheet" media="screen" href="modal.css">
 	<script src="popup.js"></script>
   </head>
   <body>
@@ -29,6 +29,22 @@ This is the HTML code for the SafeSpace Google Chrome extension.
 			<button style="width:50px" id="remove_btn" type="button3">-</button>
 			<button id="save_btn" type="button">Save</button>
 			</div>
+			
+			<!-- Trigger/Open The Modal -->
+			<button id="myBtn">Open Modal</button>
+			
+			
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+				<span class="close">x</span>
+				<p>Some text in the Modal..</p>
+				</div>
+				
+			</div>
+			
           <h2>About SafeSpace</h2><p>SafeSpace is a free browser extension created by Anthony Crudo, Jackie Bettencourt, Alisha Foxall and Mohamad Mansour to improve their experience on with using Google Chrome to browse the internet. We hope that you can utilize our extension to help improve the quality of your experience as well!</p><br />
           <p>This extension was created by the 4 team members during the 2016 Local Hack Day Hackathon at Queen's University!</p><br />
           <p>Thank you for downloading and using our extension! We love you!</p>
@@ -41,5 +57,6 @@ This is the HTML code for the SafeSpace Google Chrome extension.
       <div id="version_div"> </div>
     </div>
   </body>
+  <script src="modal.js"></script>
 </html>
 

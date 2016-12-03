@@ -54,6 +54,7 @@ function getCurrentTabUrl(callback) {
  * @param {function(string)} errorCallback - Called when the image is not found.
  *   The callback gets a string that describes the failure reason.
  */
+ /*
 function getImageUrl(searchTerm, callback, errorCallback) {
   // Google image search - 100 searches per day.
   // https://developers.google.com/image-search/
@@ -87,7 +88,7 @@ function getImageUrl(searchTerm, callback, errorCallback) {
   };
   x.send();
 }
-
+*/
 function renderStatus(statusText) {
   document.getElementById('status').textContent = statusText;
 }

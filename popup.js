@@ -5,30 +5,34 @@ function displayInputs(triggerList) {
 }
 
 function addTriggers(text) {
-  var wrapper, input, removeImage;
+  var wrapper, input;
   wrapper = document.getElementById('triggers');
   input = document.createElement("input");
   input.type = "text";
   input.name = text;
   input.value = text;
-  removeImage = document.createElement('img');
-  removeImage.scr = 'deleteIcon.png';
   wrapper.insertBefore(document.createElement("br"), wrapper.firstChild);
-  wrapper.insertBefore(removeImage, wrapper.firstChild);
   wrapper.insertBefore(input, wrapper.firstChild);
 }
 
 function addInput() {
-  var wrapper, input, removeImage;
+  var wrapper, input;
   wrapper = document.getElementById('triggers');
   input = document.createElement("input");
   input.type = "text";
   input.name = "";
   wrapper.appendChild(input);
   wrapper.appendChild(document.createElement("br"));
-  removeImage = document.createElement('img');
-  removeImage.scr = 'deleteIcon.png';
-  wrapper.appenfChild(removeImage);
+}
+
+function removeInput() {
+  var len, children, wrapper;
+  wrapper = document.getElementById("triggers");
+  children = wrapper.childNodes;
+  len = children.length;
+  if (children[len-1].value == "" || children[len-1].value == null) {
+        wrapper.removeChild(children[len-1]);
+  }
 }
 
 function saveOptions() {

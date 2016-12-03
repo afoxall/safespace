@@ -27,9 +27,9 @@ This is the HTML code for the SafeSpace Google Chrome extension.
     <div id="title">
       <img style="float:left;" src="icon.png" height=75"/>
       <h1> SafeSpace <span id="browser_span"> </span></h1>
+	  <ul style="float:centre;" id="tabs"><li id="listsTab" class="selected"><a href="#lists">Lists</a></li><li id="aboutTab"><a href="#about">About</a></li>
     </div>
     <div id="tabsDiv">
-      <ul id="tabs"><li id="listsTab" class="selected"><a href="#lists">Lists</a></li><li id="settingsTab"><a href="#settings">Settings</a></li><li id="saveloadTab"><a href="#saveload">Save/Load</a></li><li id="aboutTab"><a href="#about">About</a></li>
     </div>
     <div id="content">
       <div id="foregroundDiv">
@@ -38,7 +38,9 @@ This is the HTML code for the SafeSpace Google Chrome extension.
             <h2>Your Black List</h2>
             <p>SafeSpace will check and save you from websites with these words in them:</p><br />
             <a href="#" id="listBlackAdd">add</a><br />
+			<button id="save_btn" type="button" value="Save" /button>
           </div>
+		   
         </div>
       </div>
       <div id="backgroundDiv">
@@ -62,7 +64,7 @@ This is the HTML code for the SafeSpace Google Chrome extension.
         &nbsp;
       </div>
       <input id="load_btn" type="button" value="Load" style="display:none;" />
-      <input id="save_btn" type="button" value="Save" />&nbsp;&nbsp;
+      <input id="save_btn" type="button" value="Save" />
       <input id="reset_btn" type="button" value="Restore defaults" />
       <div id="version_div"> </div>
     </div>

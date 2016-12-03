@@ -5,13 +5,20 @@ html, body {
   padding:10px 30px 30px 10px;
   background-color:#C67E76;
   color:#4F545A;
-  width:640px;
+  width:310px;
 }
 
 h1 {
   color:#655773;
   font-size: 32px;
   font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+}
+
+button {
+	background-color:#FFE4E1;
+	border: none;
+	color: white;
+	padding: 15px 32px;
 }
 
 h2 {
@@ -40,7 +47,7 @@ div {
   outline-style: none;
   outline-width: 0px;
   padding: 10px 30px 5px 10px;
-  width: 570px;
+  width: 270px;
   border-radius: 3px;
 }
 
@@ -98,7 +105,7 @@ div {
   padding: 0;
   overflow: hidden;
   clear: both;
-  width:408px;
+  width:204px;
 }
 
 #tabs li {

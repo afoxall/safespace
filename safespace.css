@@ -17,21 +17,29 @@ h1 {
 button {
 	background-color:#FFE4E1;
 	border: none;
-	color: white;
+	font-family: Palatino Linotype, Book Antiqua, Palatino;
+	color: #655773;
 	padding: 10px 15px;
+	border-top: 1px solid rgba(0, 0, 0, .18);
+	border-right: 1px solid rgba(0, 0, 0, .18);
+	border-left: 2px solid rgba(0, 0, 0, .18);
+	border-radius: 3px;
 }
 
 h2 {
   margin:0;
+  padding: 10px 0px 0px 10px;
 }
 
 p {
   margin:0;
+  padding: 10px 0px 0px 10px;
 }
 
 a {
-  color:#4F545A;
+  color:#655773;
   text-decoration: none;
+  padding: 10px 0px 0px 10px;
 }
 
 div {
@@ -124,7 +132,7 @@ div {
 }
 
 #tabs li a {
-  color: rgba(255, 255, 255, .69);
+  color: #655773;
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;

@@ -35,6 +35,16 @@ button {
 	line-height: 5px;
 }
 
+remove_btn {
+	background-color:#FFE4E1;
+	border: none;
+	font-family: Palatino Linotype, Book Antiqua, Palatino;
+	color: #655773;
+	padding: 10px 15px;
+	height: 19px;
+	width: 19px;
+}
+
 h2 {
   margin:0;
   padding: 10px 0px 0px 10px;

@@ -1,8 +1,8 @@
 {
 	"manifest_version":2,
 	"name":"Safespace",
-	"description":"thingy",
-	"version": "1.0",
+	"description":"Notifying and protecting you from keywords and topics that you set and save!",
+	"version": "1.0.1",
 
 	"browser_action":{
 		"default_icon":"icon.jpeg",

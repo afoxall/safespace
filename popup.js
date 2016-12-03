@@ -62,11 +62,8 @@ function contentLoaded() {
   var save_btn, add_btn;
   save_btn = document.getElementById('save_btn');
   add_btn = document.getElementById('add_btn');
-<<<<<<< HEAD
-  remove_btn = document.getElementById('add_btn');
-=======
   remove_btn = document.getElementById('remove_btn');
->>>>>>> jackie
+
 
   save_btn.addEventListener('click', saveOptions);
   add_btn.addEventListener('click', addInput);

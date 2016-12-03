@@ -10,6 +10,10 @@
 		"default_popup":"popup.html",
 		"default_title":"SafeSpace"
 	},
+      "background": {
+      "scripts": ["warning.js"],
+      "persistent": false
+  },
 	"content_scripts": [ {
 		
 		"js": [ "scanner.js" ],

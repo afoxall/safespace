@@ -32,7 +32,13 @@ function addInput() {
 }
 
 function saveOptions() {
-  confirm("Are you working?");
+  var ts = document.getElementById("triggers").getElementsByTagName("*");
+  triggers = [];
+  for(child in ts){
+    triggers[child.value()] = false;
+  }
+  chrome.storage.sync.set("triggers":triggers);
+  
 }
 
 function contentLoaded() {

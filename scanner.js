@@ -3,7 +3,7 @@
 
 chrome.runtime.onMessage.addListener(function(request) {
     if (request.type === 'clear_page') {
-        walk(document.body, request.triggers, clearText);
+        walk(document.body, request.triggers, cleanText);
     }
 }
 );
@@ -29,6 +29,7 @@ for(key in triggers){
 if(numfound > 0){
     //alert("We found " + numfound + " of your triggers on this site.");
     chrome.runtime.sendMessage({"type": "create_warning", "triggers": triggers, "num":numfound }, function(response) {
+        walk(document.body, triggers, cleanText);
     });
 }
 
@@ -90,11 +91,12 @@ function searchText(textNode, triggers)
  */   
 }
 
-function cleanText(triggers){
+function cleanText(textNode,triggers){
     var v = textNode.nodeValue;
 
     for(key in triggers){
-        v = v.replace(key, "*".repeat(key.length));
+        var regEx = new RegExp(key, "ig");
+        v = v.replace(regEx, "*".repeat(key.length));
     }
 	textNode.nodeValue = v;
 }

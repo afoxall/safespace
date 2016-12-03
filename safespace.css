@@ -12,6 +12,8 @@ h1 {
   color:#655773;
   font-size: 32px;
   font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+  padding-left: 80px;
+  line-height: 35px;
 }
 
 button {
@@ -44,6 +46,7 @@ a {
 
 div {
   color:#4F545A;
+
 }
 
 #content,#title {
@@ -115,6 +118,8 @@ div {
   clear: both;
   width:204px;
 }
+
+
 
 #tabs li {
   border: 1px solid rgba(0, 0, 0, .11);

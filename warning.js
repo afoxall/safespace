@@ -5,6 +5,8 @@ chrome.runtime.onMessage.addListener(function(request) {
         document.getElementById("warning").innerHTML = "We found " + request.num + " of your triggers on this page.";
         var show_btn = document.getElementById('show_btn');
         var hide_btn = document.getElementById('hide_btn');
+        var clear_btn = document.getElementById('clear_btn');
+        var back_btn = document.getElementById('back_btn');
         hide_btn.style.visibility="hidden";
 
         //show list
@@ -21,6 +23,26 @@ chrome.runtime.onMessage.addListener(function(request) {
             }  
             show_btn.style.visibility = "visible";
             hide_btn.style.visibility = "hidden";
+        });
+        
+        clear_btn.addEventListener('click', function(){
+            
+            chrome.tabs.query({active: true, currentWindow: false}, function(tabs){
+                chrome.tabs.sendMessage(tabs[0].id, {type: "clear_page", "triggers":request.triggers}, function(response) {});  
+            });
+            
+            //chrome.runtime.sendMessage({type: "clear_page", "triggers":request.triggers});
+            //close();
+        });
+        
+        back_btn.addEventListener('click', function(){
+            chrome.extension.getBackgroundPage().goback();
+            /*chrome.tabs.query({active: true, currentWindow: false}, function(tabs){
+                alert(tabs[0].toString());
+                chrome.tabs.sendMessage(tabs[0].id, {type: "go_back"}, function(response) {});  
+            });*/
+            //window.close();     // Close dialog
+                
         });
     }
 });

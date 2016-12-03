@@ -1,0 +1,15 @@
+{
+	"manifest_version":2,
+	"name":"Safespace",
+	"description":"thingy",
+	"version": "1.0",
+
+	"browser_action":{
+		"default_icon":"icon.jpeg",
+		"default_popup":"popup.html"
+	},
+	"permissions":[
+		"activeTab",
+		"https://ajax.googleapis.com/"
+	]
+}

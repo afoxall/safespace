@@ -15,3 +15,6 @@ chrome.runtime.onMessage.addListener(function(request) {
         });
     }
 });
+function goback(){
+    window.history.back();
+}

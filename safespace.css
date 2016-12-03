@@ -1,15 +1,18 @@
 html, body {
   color:black;
   font-family:arial,helvetica,sans-serif;
+  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
   margin:0;
   padding:10px 30px 30px 10px;
-  background-color:#36465D;
+  background-color:#BC8F8F;
   color:#4F545A;
   width:640px;
 }
 
 h1 {
-  color:#4F545A;
+  color:#655773;
+  font-size: 30px;
+  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
 }
 
 h2 {
@@ -30,14 +33,14 @@ div {
 }
 
 #content,#title {
-  background: #FFF;
+  background: #FFDAB9;
   color:#4F545A;
   display: block;
   margin: 0px;
   outline-color: #444;
   outline-style: none;
   outline-width: 0px;
-  padding: 10px 30px 5px 30px;
+  padding: 10px 30px 5px 10px;
   width: 570px;
   border-radius: 3px;
 }

@@ -4,13 +4,27 @@
 	"description":"Warning and protecting you from keywords, topics and phrases.",
 	"version": "1.0",
 
+
 	"browser_action":{
 		"default_icon":"icon.png",
 		"default_popup":"popup.html",
 		"default_title":"SafeSpace"
 	},
+      "background": {
+      "scripts": ["background.js", "warning.js"],
+      "persistent": false
+    },
+	"content_scripts": [ {
+		
+		"js": [ "scanner.js" ],
+		"matches": [ "http://*/*", "https://*/*" ],
+		"run_at": "document_idle"
+	} ],
+        
 	"permissions":[
 		"activeTab",
-		"https://ajax.googleapis.com/"
+		"storage",
+        "https://*/*",
+        "https://*/*"
 	]
 }

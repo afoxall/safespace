@@ -34,7 +34,6 @@ if(numfound > 0){
     walk(document.body, triggers, cleanText);
     //});
     document.body.insertAdjacentHTML('beforeend',
-            
             '<style> .modal {\
     display: none; /* Hidden by default */\
     position: fixed; /* Stay in place */\
@@ -74,7 +73,14 @@ if(numfound > 0){
             <div id="myModal" class="modal">\
                 <div class="modal-content">\
                     <span class="close">x</span>\
-                    <p>Some text in the Modal..</p>\
+                    <p id="warning"></p>\
+					<p id="trigger_list"></p>\
+					<button style="height:50;width:100px" id="show_btn" type="button">Show which</button>\
+					<button style="height:50;width:100px" id="hide_btn" type="button" style="hidden">Hide</button>\
+					<p></p>\
+					<button style="height:50;width:100px" id="clear_btn" type="button">Clear words from page</button>\
+					<button style="height:50;width:100px" id="back_btn" type="button">Go Back</button>\
+					<script src="warning.js"></script>\
                     </div>\
                     </div>'
         );

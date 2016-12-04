@@ -39,7 +39,6 @@ chrome.storage.sync.get(null, function(items) {
     }
 
         
-
     if(numfound > 0){
         //alert("We found " + numfound + " of your triggers on this site.");
         //chrome.runtime.sendMessage({"type": "create_warning", "triggers": triggers, "num":numfound }, function(response) {
@@ -100,7 +99,6 @@ chrome.storage.sync.get(null, function(items) {
         var modal = document.getElementById('myModal');
         modal.style.display = "block";
     }
-
 
 
 function walk(node, triggers, func)

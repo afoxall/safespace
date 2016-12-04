@@ -40,7 +40,9 @@ function saveOptions() {
   var ts = document.getElementById("triggers").getElementsByTagName("INPUT");
   var triggers = [];
   for(child in ts){
-    triggers[child.value] = false;
+    if (child.value) {
+        triggers[child.value] = false;
+    }
   }
   chrome.storage.sync.set({"triggers":triggers});
   
@@ -48,13 +50,17 @@ function saveOptions() {
 
 function contentLoaded() {
 
-  chrome.storage.local.get('triggers', function (triggers) {
-        
+  chrome.storage.sync.get("triggers", function (result) {
+       alert(Object.getOwnPropertyNames(result).length);
+       if (Object.getOwnPropertyNames(result).length !== 0) {
+//         val ts = result.triggers;
+//         displayInputs(ts);
+       }
   });
 
 
- triggerList = ["1", "2", "3"];
-  displayInputs(triggerList);
+//  triggerList = ["1", "2", "3"];
+//  displayInputs(triggerList);
 
   var save_btn, add_btn;
   save_btn = document.getElementById('save_btn');

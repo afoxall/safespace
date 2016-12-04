@@ -15,77 +15,86 @@ chrome.runtime.onMessage.addListener(function(request) {
 );
 var triggers = {"Hack": false,"banana":false};
 
-walk(document.body, triggers, searchText);
 
-var numfound = 0;
-
-//check if any of the things in the array are true
-for(key in triggers){
-    if(triggers[key]){
-        numfound += 1;
+chrome.storage.local.get("triggers", function(result){
+    if(result.length > 0){
+        start(result.triggers);
     }
-}
+});
 
-    
+function start(triggers){
+    walk(document.body, triggers, searchText);
 
-if(numfound > 0){
-    //alert("We found " + numfound + " of your triggers on this site.");
-    //chrome.runtime.sendMessage({"type": "create_warning", "triggers": triggers, "num":numfound }, function(response) {
-    walk(document.body, triggers, cleanText);
-    //});
-    document.body.insertAdjacentHTML('beforeend',
-            
-            '<style> .modal {\
-    display: none; /* Hidden by default */\
-    position: fixed; /* Stay in place */\
-    z-index: 1; /* Sit on top */\
-    left: 0;\
-    top: 0;\
-    width: 100%; /* Full width */\
-    height: 100%; /* Full height */\
-    overflow: auto; /* Enable scroll if needed */\
-    background-color: rgb(198,126,118); /* Fallback color */\
-    background-color: rgba(198,126,118,1); /* Black w/ opacity */\
-}\
-\
-/* Modal Content/Box */\
-.modal-content {\
-    background-color: #FFE4E1;\
-    margin: 15% auto; /* 15% from the top and centered */\
-    padding: 20px;\
-    border: 1px solid #888;\
-    width: 80%; /* Could be more or less, depending on screen size */\
-}\
-\
-/* The Close Button */\
-.close {\
-    color: #aaa;\
-    float: right;\
-    font-size: 28px;\
-    font-weight: bold;\
-}\
-\
-.close:hover,\
-.close:focus {\
-    color: black;\
-    text-decoration: none;\
-    cursor: pointer;\
-}"</style>\
-            <div id="myModal" class="modal">\
-                <div class="modal-content">\
-                    <span class="close">x</span>\
-                    <p>Some text in the Modal..</p>\
-                    </div>\
-                    </div>'
-        );
-    var closeModal = document.getElementsByClassName("close")[0];
+    var numfound = 0;
 
-    closeModal.onclick = function(){
-        modal.style.display = "none";
-    }    
+    //check if any of the things in the array are true
+    for(key in triggers){
+        if(triggers[key]){
+            numfound += 1;
+        }
+    }
+
         
-    var modal = document.getElementById('myModal');
-    modal.style.display = "block";
+
+    if(numfound > 0){
+        //alert("We found " + numfound + " of your triggers on this site.");
+        //chrome.runtime.sendMessage({"type": "create_warning", "triggers": triggers, "num":numfound }, function(response) {
+        walk(document.body, triggers, cleanText);
+        //});
+        document.body.insertAdjacentHTML('beforeend',
+                
+                '<style> .modal {\
+        display: none; /* Hidden by default */\
+        position: fixed; /* Stay in place */\
+        z-index: 1; /* Sit on top */\
+        left: 0;\
+        top: 0;\
+        width: 100%; /* Full width */\
+        height: 100%; /* Full height */\
+        overflow: auto; /* Enable scroll if needed */\
+        background-color: rgb(198,126,118); /* Fallback color */\
+        background-color: rgba(198,126,118,1); /* Black w/ opacity */\
+    }\
+    \
+    /* Modal Content/Box */\
+    .modal-content {\
+        background-color: #FFE4E1;\
+        margin: 15% auto; /* 15% from the top and centered */\
+        padding: 20px;\
+        border: 1px solid #888;\
+        width: 80%; /* Could be more or less, depending on screen size */\
+    }\
+    \
+    /* The Close Button */\
+    .close {\
+        color: #aaa;\
+        float: right;\
+        font-size: 28px;\
+        font-weight: bold;\
+    }\
+    \
+    .close:hover,\
+    .close:focus {\
+        color: black;\
+        text-decoration: none;\
+        cursor: pointer;\
+    }"</style>\
+                <div id="myModal" class="modal">\
+                    <div class="modal-content">\
+                        <span class="close">x</span>\
+                        <p>Some text in the Modal..</p>\
+                        </div>\
+                        </div>'
+            );
+        var closeModal = document.getElementsByClassName("close")[0];
+
+        closeModal.onclick = function(){
+            modal.style.display = "none";
+        }    
+            
+        var modal = document.getElementById('myModal');
+        modal.style.display = "block";
+    }
 }
 
 
@@ -123,14 +132,7 @@ function searchText(textNode, triggers)
         if(val.toLowerCase().includes(key.toLowerCase())){
             triggers[key] = true;
         }
-    }
-    /*       
-    }        
-	if (triggers.keys.some(function(t) { return val.includes(t)})) {
-            //make a popup to say that we found a match
-            triggers[t] = true;
-        }
- */   
+    }  
 }
 
 function cleanText(textNode,triggers){

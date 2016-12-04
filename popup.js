@@ -47,14 +47,11 @@ function saveOptions() {
 }
 
 function contentLoaded() {
-/*
+
   chrome.storage.local.get('triggers', function (triggers) {
-       triggers = result.triggers;
-       alert(result.triggers);
-       $("#triggers").val(triggers);
-       displayInputs(triggers);
+        
   });
-*/
+
 
  triggerList = ["1", "2", "3"];
   displayInputs(triggerList);

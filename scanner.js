@@ -14,15 +14,19 @@ chrome.runtime.onMessage.addListener(function(request) {
 }
 );
 var triggers = {"Hack": false,"banana":false};
-
-
-chrome.storage.local.get("triggers", function(result){
-    if(result.length > 0){
-        start(result.triggers);
+/*
+chrome.storage.sync.get(null, function(items) {
+    var allKeys = Object.keys(items);
+    var res = []
+    for(key in allKeys){
+        chrome.storage.sync.get(allKeys[key], function(result){
+            res[result.key] = result.value;
+        });
     }
-});
+    start(res);
+    });
+*/
 
-function start(triggers){
     walk(document.body, triggers, searchText);
 
     var numfound = 0;
@@ -81,8 +85,9 @@ function start(triggers){
     }"</style>\
                 <div id="myModal" class="modal">\
                     <div class="modal-content">\
+                        <p></p>\
                         <span class="close">x</span>\
-                        <p>Some text in the Modal..</p>\
+                        <p>We found some trigger words in this page. We beeped them out so you won\'t see them. Press X to go back tot he page.</p>\
                         </div>\
                         </div>'
             );
@@ -95,7 +100,7 @@ function start(triggers){
         var modal = document.getElementById('myModal');
         modal.style.display = "block";
     }
-}
+
 
 
 function walk(node, triggers, func)

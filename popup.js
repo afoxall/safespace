@@ -38,13 +38,14 @@ function removeInput() {
 
 function saveOptions() {
   var ts = document.getElementById("triggers").getElementsByTagName("INPUT");
-  var triggers = [];
+  var triggers = {};
   for(child in ts){
-    if (child.value) {
-        triggers[child.value] = false;
+    if (ts[child].value) {
+        triggers[ts[child].value] = false;
     }
   }
-  chrome.storage.sync.set({"triggers":triggers});
+  
+chrome.storage.sync.set({"triggers":triggers});
   
 }
 
